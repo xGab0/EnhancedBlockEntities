@@ -22,7 +22,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(BuiltinModelItemRenderer.class)
 public class BuiltinModelItemRendererMixin {
     @Inject(method = "render", at = @At("HEAD"), cancellable = true)
-    private void enhanced_bes$renderBeds(ItemStack stack, ModelTransformationMode mode, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay, CallbackInfo ci) {
+     private void enhanced_bes$renderBeds(ItemStack stack, ModelTransformationMode mode, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay, CallbackInfo ci) {
         if (EnhancedBlockEntities.CONFIG.renderEnhancedBeds &&
                 stack.getItem() instanceof BlockItem item &&
                 item.getBlock() instanceof BedBlock bed &&
